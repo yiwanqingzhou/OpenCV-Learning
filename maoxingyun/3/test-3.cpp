@@ -29,7 +29,7 @@ int main(){
     addWeighted(imageROI, 0.5, image2, 0.3, 0., imageROI);
 
     namedWindow("screen3");
-    imshow("screen3", imageROI);
+    imshow("screen3", image1);
 
     waitKey(6000);
 
