@@ -53,7 +53,7 @@ bool LinearBlending()
     namedWindow("线性混合示例窗口【原图】", 1);
     imshow("线性混合示例窗口【原图】", srcImage2 );
 
-    namedWindow("<3>线性混合示例窗口【效果图】", 1);
+    namedWindow("线性混合示例窗口【效果图】", 1);
     imshow("线性混合示例窗口【效果图】", dstImage );
 
     return true;
@@ -62,8 +62,8 @@ bool LinearBlending()
 bool ROI_LinearBlending()
 {
 
-    Mat srcImage4= imread("dota_pa.jpg", 1);
-    Mat logoImage= imread("dota_logo.jpg");
+    Mat srcImage4= imread("test.png", 1);
+    Mat logoImage= imread("test2.png");
 
     if(!srcImage4.data ) { printf("读取srcImage4错误~！ \n"); return false; }
     if(!logoImage.data ) { printf("读取logoImage错误~！ \n"); return false; }
@@ -88,12 +88,12 @@ int main()
 {
     system("color 5E");
 
-    if(ROI_AddImage()&& LinearBlending( )&&ROI_LinearBlending( ))
-    {
-            cout<<endl<<"嗯。好了，得出了你需要的图像~! : )";
-    }
+    // if(ROI_AddImage()&& LinearBlending( )&&ROI_LinearBlending( ))
+    // {
+    //         cout<<endl<<"嗯。好了，得出了你需要的图像~! : )";
+    // }
 
-    waitKey(0);
+    // waitKey(0);
     
     return 0;
 
