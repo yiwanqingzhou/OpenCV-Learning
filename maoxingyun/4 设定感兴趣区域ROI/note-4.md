@@ -29,6 +29,8 @@
     Mat imageROI = image1(Range(350, 350 + image2.rows), Range(800, 800 + image2. cols));
     ```
 
+**注意：两种方法的xy排列顺序不同**
+
 <Br>
 
 # 线性混合操作
