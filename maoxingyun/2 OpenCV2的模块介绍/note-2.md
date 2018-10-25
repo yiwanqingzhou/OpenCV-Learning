@@ -2,6 +2,8 @@
 
 #### calib3d
   其实就是就是Calibration（校准）加3D这两个词的组合缩写。
+
+  > Basic multiple-view geometry algorithms, single and stereo camera calibration, object pose estimation, stereo correspondence algorithms, and elements of 3D reconstruction.
   
   这个模块主要是相机校准和三维重建相关的内容。  
   基本的多视角几何算法，单个立体摄像头标定，物体姿态估计，立体相似性算法，3D信息的重建等等。
@@ -17,7 +19,11 @@
 <br>
 
 #### core
-  核心功能模块，包含如下内容：
+  核心功能模块
+
+> A compact module defining basic data structures, including the dense multi-dimensional array Mat and basic functions used by all other modules.
+  
+  包含如下内容：
   - OpenCV基本数据结构
   - 动态数据结构
   - 绘图函数
@@ -28,7 +34,10 @@
 <br>  
   
 #### imgproc
-  Image和Processing这两个单词的缩写组合。
+Image和Processing这两个单词的缩写组合。
+
+> An image processing module that includes linear and non-linear image filtering, geometrical image transformations (resize, affine and perspective warping, generic table-based remapping), color space conversion, histograms, and so on.
+  
   
   图像处理模块，这个模块包含了如下内容：
   - 线性和非线性的图像滤波
@@ -44,6 +53,8 @@
 
 #### features2d
   也就是Features2D，2D功能框架
+
+  > Salient feature detectors, descriptors, and descriptor matchers.
   
   包含如下内容：
   - 特征检测和描述
@@ -66,11 +77,15 @@
 
 #### gpu
   运用GPU加速的计算机视觉模块
+
+  > GPU-accelerated algorithms from different OpenCV modules.
   
 <br>
   
 #### highgui
   也就是high gui，高层GUI图像用户界面
+
+  > An easy-to-use interface to simple UI capabilities.
   
   包含媒体的I/O输入输出，视频捕捉、图像和视频的编码解码、图形交互界面的接口等内容
   
@@ -117,6 +132,8 @@
 
 #### objdetect
   目标检测模块
+
+  > Detection of objects and instances of the predefined classes (for example, faces, eyes, mugs, people, cars, and so on).
   
   包含 Cascade Classification（级联分类）和 Latent SVM 两个部分
 
@@ -163,6 +180,8 @@ opencv测试相关代码，不用去管他
 #### video
 视频分析组件
 
+> A video analysis module that includes motion estimation, background subtraction, and object tracking algorithms.
+
 该模块包括运动估计，背景分离，对象跟踪等视频处理相关内容。
 
 <br>
@@ -173,4 +192,14 @@ Video stabilization，视频稳定相关的组件
 官方文档中没有多作介绍，不管它了。
 
 
+<br>
+<br>
 
+
+一些当前或将来的OpenCV外部名称可能与STL或其他库冲突。在这种情况下，使用显式命名空间说明符来解决名称冲突:
+```C++
+Mat a(100, 100, CV_32F);
+randu(a, Scalar::all(1), Scalar::all(std::rand()));
+cv::log(a, a);
+a /= std::log(2.);
+```

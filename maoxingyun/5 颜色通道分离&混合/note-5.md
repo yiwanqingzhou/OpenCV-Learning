@@ -2,7 +2,7 @@
 
 为了更好的观察一些图像材料的特征，有时需要对RGB三个颜色通道的分量进行分别显示和调整。
 
-通过OpenCV的split和merge方法可以很方便的达到目的。
+通过OpenCV的```split```和```merge```方法可以很方便的达到目的。
 
 <br>
 
@@ -19,11 +19,11 @@ void split(const Mat& src, Mat* mvbegin);
 void split(InputArray m, OutputArrayOfArrays mv);
 ```
 
-- 第一个参数，InputArray类型的m或者const Mat&类型的src，填我们需要进行分离的多通道数组。
-- 第二个参数，OutputArrayOfArrays类型的mv，填函数的输出数组或者输出的vector容器。
+- 第一个参数，```InputArray```类型的m或者```const Mat&```类型的src，填我们需要进行分离的多通道数组。
+- 第二个参数，```OutputArrayOfArrays```类型的```mv```，填函数的输出数组或者输出的```vector```容器。
 
 
-split函数分割多通道数组转换成独立的单通道数组，按公式来看就是这样：
+```split``` 函数分割多通道数组转换成独立的单通道数组，按公式来看就是这样：
 
 $$
     mv[c](I) = src(I)_c
@@ -54,9 +54,8 @@ cout << "channels2 = " << endl << channels.at(2) << endl;
 merge(channels, M1);
 cout << "M1 = " << endl << M1 << endl;
 ```
-~~~~
 
-*如果我们需要从多通道数组中提取出特定的单通道数组，或者说实现一些复杂的通道组合，可以使用mixChannels()函数。*
+*如果我们需要从多通道数组中提取出特定的单通道数组，或者说实现一些复杂的通道组合，可以使用```mixChannels()函数```。*
 
 <br>
 
@@ -71,8 +70,8 @@ void merge(const Mat* mv, size_tcount, OutputArray dst)
 void merge(InputArrayOfArrays mv,OutputArray dst)
 ```
 
-- 第一个参数，mv，填需要被合并的输入矩阵或vector容器的阵列，这个mv参数中所有的矩阵必须有着一样的尺寸和深度。
-- 第二个参数，count，当mv为一个空白的C数组时，代表输入矩阵的个数，这个参数显然必须大于1.
-- 第三个参数，dst，即输出矩阵，和mv[0]拥有一样的尺寸和深度，并且通道的数量是矩阵阵列中的通道的总数。
+- 第一个参数，```mv```，填需要被合并的输入矩阵或```vector```容器的阵列，这个```mv```参数中所有的矩阵必须有着一样的尺寸和深度。
+- 第二个参数，```count```，当```mv```为一个空白的C数组时，代表输入矩阵的个数，这个参数显然必须大于1.
+- 第三个参数，```dst```，即输出矩阵，和```mv[0]```拥有一样的尺寸和深度，并且通道的数量是矩阵阵列中的通道的总数。
  
 

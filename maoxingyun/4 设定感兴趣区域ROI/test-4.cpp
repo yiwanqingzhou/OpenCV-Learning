@@ -94,6 +94,7 @@ int main()
     // }
 
     // waitKey(0);
+    ROI_AddImage();
     
     return 0;
 
