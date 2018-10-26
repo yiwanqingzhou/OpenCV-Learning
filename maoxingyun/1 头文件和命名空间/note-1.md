@@ -13,7 +13,7 @@ using namespace cv;
 
 ## 关于Mat类型
 
-```cv::Mat``` 类是用于保存图像以及其他矩阵数据的数据结构。
+`cv::Mat` 类是用于保存图像以及其他矩阵数据的数据结构。
 
 默认情况下，其尺寸为0，我们也可以指定初始尺寸。
 比如定义一个Mat类对象：
@@ -30,5 +30,6 @@ Mat img = imread("test.jpg");
 <br>
 
 ## 编译
-
+```bash
 g++ try.cpp `pkg-config opencv --cflags --libs`
+```
